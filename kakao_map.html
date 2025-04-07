@@ -15,7 +15,6 @@
     <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=d7e9c8ac8fea694b6444dc92bfdf6a1f&autoload=false"></script>
     <script type="text/javascript">
         kakao.maps.load(function() {
-            // v3가 모두 로드된 후, 이 콜백 함수가 실행됩니다.
             var map = new kakao.maps.Map(node, options);
         });
     </script>
@@ -23,20 +22,14 @@
 <body>
 <div id="map"></div>
 <script>
-    const script = document.createElement("script");
-    script.src = "http://dapi.kakao.com/v2/maps/sdk.js?appkey= JAVASCRIPT_APP_KEY&autoload=false&libraries=clusterer,services&";
-    document.head.appendChild(script);
-    script.onload = () => {
-        kakao.maps.load(() => {
-            const node = document.getElementById('map'); // 지도를 표시할 div
-            const center = new kakao.maps.LatLng(37.50802, 127.062835);
-            const options = {
-                center,
-                level: 3
-            };
-            const map = new kakao.maps.Map(node, options);
-        });
-    };
+    function printKakaomap() {
+       var container = document.getElementById("map");
+       var options = {
+         center: new window.kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
+         level: 3,
+       };
+       var map = new window.kakao.maps.Map(container, options);
+     }
 </script>
 </body>
 </html>
