@@ -12,24 +12,22 @@
         }
     </style>
 
-    <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=d7e9c8ac8fea694b6444dc92bfdf6a1f&autoload=false"></script>
-    <script type="text/javascript">
-        kakao.maps.load(function() {
-            var map = new kakao.maps.Map(node, options);
-        });
+    <!-- ✅ SDK를 async로 로드하고, callback 함수 지정 -->
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d7e9c8ac8fea694b6444dc92bfdf6a1f&autoload=false"></script>
+    <script>
+        window.onload = function () {
+          kakao.maps.load(function () {
+            var mapContainer = document.getElementById('map');
+            var mapOption = {
+              center: new kakao.maps.LatLng(37.5665, 126.9780),
+              level: 3
+            };
+            var map = new kakao.maps.Map(mapContainer, mapOption);
+          });
+        };
     </script>
 </head>
 <body>
 <div id="map"></div>
-<script>
-    function printKakaomap() {
-       var container = document.getElementById("map");
-       var options = {
-         center: new window.kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
-         level: 3,
-       };
-       var map = new window.kakao.maps.Map(container, options);
-     }
-</script>
 </body>
 </html>
