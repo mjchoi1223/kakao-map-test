@@ -1,35 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Kakao Map</title>
-    <style>
-        html, body, #map {
-          width: 100%;
-          height: 100%;
-          margin: 0;
-          padding: 0;
-        }
-    </style>
-
-    <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=d7e9c8ac8fea694b6444dc92bfdf6a1f&autoload=false"></script>
-    <script type="text/javascript">
-        kakao.maps.load(function() {
-            var map = new kakao.maps.Map(node, options);
-        });
-    </script>
+	<meta charset="utf-8"/>
+	<title>Kakao 지도 시작하기</title>
 </head>
 <body>
-<div id="map"></div>
-<script>
-    function printKakaomap() {
-       var container = document.getElementById("map");
-       var options = {
-         center: new window.kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
-         level: 3,
-       };
-       var map = new window.kakao.maps.Map(container, options);
-     }
-</script>
+	<div id="map" style="width:500px;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d7e9c8ac8fea694b6444dc92bfdf6a1f"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+	</script>
 </body>
 </html>
