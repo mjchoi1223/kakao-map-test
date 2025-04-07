@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>Kakao Map</title>
-  <style>
-    html, body, #map {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+    <meta charset="utf-8" />
+    <title>Kakao Map</title>
+    <style>
+        html, body, #map {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+    </style>
 
-  <!-- autoload 제거된 스크립트 -->
-  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d7e9c8ac8fea694b6444dc92bfdf6a1f"></script>
+    <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=d7e9c8ac8fea694b6444dc92bfdf6a1f&autoload=false"></script>
+    <script type="text/javascript">
+        kakao.maps.load(function() {
+            // v3가 모두 로드된 후, 이 콜백 함수가 실행됩니다.
+            var map = new kakao.maps.Map(node, options);
+        });
+    </script>
 </head>
 <body>
-  <div id="map"></div>
-  <script>
+<div id="map"></div>
+<script>
     window.onload = function () {
       var mapContainer = document.getElementById('map');
       var mapOption = {
@@ -26,6 +31,6 @@
       };
       var map = new kakao.maps.Map(mapContainer, mapOption);
     };
-  </script>
+</script>
 </body>
 </html>
